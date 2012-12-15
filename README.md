@@ -46,7 +46,14 @@ It should take approximately 2 to 3 minutes to run this.
 Help:
 -----
 
-``[mx231 5] ~ > /opt/pxsoft/````InducedRadDam````/vdefault/linux/reprocess.py -h````reprocess.py: This file will simulate the autoindexserverrun as : /opt/pxsoft/````InducedRadDam````/vdefault/linux/reprocess.pyy -e EDApplication_20101126-094937 -p 'xds_t1w?_run1_1' -s 1 -f 21in : process folder-e <edna folder>-p <xds template>, e.g.: 'xds_t1w````?````_run1_1' (Note que question mark and the quotes!)-s <start from>, default 1-f <last one>, default 21-t <step>, default 2 (to omit the even burnt wedges)``
+``[mx231 5] ~ > /opt/pxsoft/``
+``InducedRadDam``
+``/vdefault/linux/reprocess.py -h``
+``reprocess.py: This file will simulate the autoindexserverrun as : /opt/pxsoft/``
+``InducedRadDam``
+``/vdefault/linux/reprocess.pyy -e EDApplication_20101126-094937 -p 'xds_t1w?_run1_1' -s 1 -f 21in : process folder-e <edna folder>-p <xds template>, e.g.: 'xds_t1w``
+``?``
+``_run1_1' (Note que question mark and the quotes!)-s <start from>, default 1-f <last one>, default 21-t <step>, default 2 (to omit the even burnt wedges)``
 
 Usage:
 ------
@@ -54,11 +61,19 @@ Usage:
 For the data Sean collected yesterday (21 wedges, starting from 1 and
 skipping the even wedges - burnt), this is how to proceed:
 
-``[mx231 5] ~ > cd /data/visitor/mx1289/id14eh4/20120607/PROCESSED_DATA[mx231 16] PROCESSED_DATA > /opt/pxsoft/````InducedRadDam````/vdefault/linux/reprocess.py -e EDApplication_20120607-143651 -p 'xds_mx1289w?_run1_1' -s 1 -f 21 ``
+``[mx231 5] ~ > cd /data/visitor/mx1289/id14eh4/20120607/PROCESSED_DATA[mx231 16] PROCESSED_DATA > /opt/pxsoft/``
+``InducedRadDam``
+``/vdefault/linux/reprocess.py -e EDApplication_20120607-143651 -p 'xds_mx1289w?_run1_1' -s 1 -f 21 ``
 You can use ``ls -lrt`` to see which edna folder corresponds to the
 wedge sequence. For the data above, for example, the folder for the
 first collected wedge(w1) appears just after the EDNA folder name:
-``(...)drwxr-xr-x 3 opid14 jsbg   4096 Jun  7 14:37 ````EDApplication_20120607-143651````/-rw-r--r-- 1 opid14 jsbg  24801 Jun  7 14:37 EDApplication_20120607-143651.log-rw-r--r-- 1 opid14 jsbg 397147 Jun  7 14:37 EDNAOutput_994237.xmldrwxrwxrwx 2 opid14 jsbg   4096 Jun  7 14:38 HKL2000_mx1289````w1````_run1_1/drwxrwxrwx 2 opid14 jsbg   4096 Jun  7 14:38 mosflm_mx1289````w1````_run1_1/(...)``
+``(...)drwxr-xr-x 3 opid14 jsbg   4096 Jun  7 14:37 ``
+``EDApplication_20120607-143651``
+``/-rw-r--r-- 1 opid14 jsbg  24801 Jun  7 14:37 EDApplication_20120607-143651.log-rw-r--r-- 1 opid14 jsbg 397147 Jun  7 14:37 EDNAOutput_994237.xmldrwxrwxrwx 2 opid14 jsbg   4096 Jun  7 14:38 HKL2000_mx1289``
+``w1``
+``_run1_1/drwxrwxrwx 2 opid14 jsbg   4096 Jun  7 14:38 mosflm_mx1289``
+``w1``
+``_run1_1/(...)``
 
 2. Showing the plots for data already processed
 ===============================================
@@ -67,7 +82,12 @@ Sometimes in the beamlines the process runs but the plots are not
 displayed (Xterm problem....). If it run successfully, there is a
 history file in the process folder:
 
-``[mx231 5] ~ > cd /data/visitor/mx1289/id14eh4/20120607/PROCESSED_DATA[mx231 18] PROCESSED_DATA > cat history.log ````2012-06-08 10:49 -> /bliss/users/leal/Python/````InducedRadDam````/src/````InducedRadDam````.py -i -e EDApplication_20120607-143651 -p /mntdirect/_data_visitor/mx1289/id14eh4/20120607/PROCESSED_DATA/xds_mx1289w1_run1_1 -l 21``
+``[mx231 5] ~ > cd /data/visitor/mx1289/id14eh4/20120607/PROCESSED_DATA[mx231 18] PROCESSED_DATA > cat history.log ``
+``2012-06-08 10:49 -> /bliss/users/leal/Python/``
+``InducedRadDam``
+``/src/``
+``InducedRadDam``
+``.py -i -e EDApplication_20120607-143651 -p /mntdirect/_data_visitor/mx1289/id14eh4/20120607/PROCESSED_DATA/xds_mx1289w1_run1_1 -l 21``
 This history shows the command line used to call the procedure.
 Note that the procedure is called as many times as the total of wedges
 collected (default 11 wedges, from 1 to 21 skipping even wedges:
@@ -77,17 +97,34 @@ parameter -s to see the plots.
 A few examples:
 Show a plot for all collected wedges (from 1 to 21 skipping the burnt
 wedges: even numbers). The two commands are equivalent:
-``InducedRadDam````.py -i -e EDApplication_20120607-143651 -p xds_mx1289w21_run1_1 -s````InducedRadDam````.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 21 -s``
+``InducedRadDam``
+``.py -i -e EDApplication_20120607-143651 -p xds_mx1289w21_run1_1 -s``
+``InducedRadDam``
+``.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 21 -s``
 Show a plot from wedge 1 to wedge 19. The two commands are equivalent::
-``InducedRadDam````.py -i -e EDApplication_20120607-143651 -p xds_mx1289w19_run1_1 -s``
-``InducedRadDam````.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 19 -s``
+``InducedRadDam``
+``.py -i -e EDApplication_20120607-143651 -p xds_mx1289w19_run1_1 -s``
+``InducedRadDam``
+``.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 19 -s``
 Show a plot from wedge 1 to wedge 21 skipping wedge 15,17:
-``InducedRadDam````.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 21 -u "15,17" -s``Show
+``InducedRadDam``
+``.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 21 -u "15,17" -s``Show
 a plot for all collected wedges cutting the resolution to 3 for the
 theoretical intensity decay
-curve:``````InducedRadDam````.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 21 -t 3 -s``
+curve:``
+``
+``InducedRadDam``
+``.py -i -e EDApplication_20120607-143651 -p xds_mx1289w1_run1_1 -f 1 -l 21 -t 3 -s``
 
 All this information is available in the help file:
 ---------------------------------------------------
 
-``[mx231 1] ~ > ````InducedRadDam````.py -h````InducedRadDam````.py: Main routine for ````Induced```` Radiation Damage procedureMandatory fields:-e --edna <edna folder name >   For the workflow: complete path for the XML StrategyResult file can be used.-p --path <xds path> for the current wedge (the one just collected).    xds_path is of the form: [/path/path/]xds_<wedge_name>w<wedge_number>_run<run_number>_<dataset_number>Optional fields:-h --help : show help message-i --ignore: this will ignore even wedges (e.g. crystal1w2_run1_1) and will process only odd wedges (1,3,5,...,21). Use this when burning wedges are even.-c --current <integer> : current wedge entry in the queue (if absent comes from: xds_crystal1w<current>_run1_1)-f --first <integer>: first element in the queue (default 1)-l --last <integer>: of n elements in the queue (default 21)-s --see : see results of the burning strategy (no jobs are sent to condor/oar). Current wedge is used as last wedge (either from the -p <xds path> or -c parameter). This bit of code is called by default when current wedge == last wedge.-u --unset <list of ints>: When showing the results (i.e. processing the last wedge from the queue: current == last), the user may ignore some "dodgy" wedges: e.g. "1,5,7"-r --raddose <string>: raddose keywords file (file with entries of the form <keyword> = <value>, where keyword is defined in raddose manual, e.g.: FLUX = 10e12). By default the software looks for the file raddose.ini in the path. If the file exists, the keywords present in the file will replace the raddose script generated by EDNA. The new raddose file will be created as <wedge_name>_raddose.sh.-d --draw : only draws the plot to an image file, doesn't open an X window (default is open the X window)-n --config <config ini file> : default value config.ini-t --resolution : resolution for calculate intensity decay. Default is the value used in strategyOutput files:<wedge_name>.png - plot<wedge_name>.csv - csv file with all the important details<wedge_name>_real.png - plot for real dose rate if raddose.ini exists/tmp/````InducedRadDam````.log - log fileNote: the calculations and graphs are only executed when: current <integer> == last <integer>``
+``[mx231 1] ~ > ``
+``InducedRadDam``
+``.py -h``
+``InducedRadDam``
+``.py: Main routine for ``
+``Induced``
+`` Radiation Damage procedureMandatory fields:-e --edna <edna folder name >   For the workflow: complete path for the XML StrategyResult file can be used.-p --path <xds path> for the current wedge (the one just collected).    xds_path is of the form: [/path/path/]xds_<wedge_name>w<wedge_number>_run<run_number>_<dataset_number>Optional fields:-h --help : show help message-i --ignore: this will ignore even wedges (e.g. crystal1w2_run1_1) and will process only odd wedges (1,3,5,...,21). Use this when burning wedges are even.-c --current <integer> : current wedge entry in the queue (if absent comes from: xds_crystal1w<current>_run1_1)-f --first <integer>: first element in the queue (default 1)-l --last <integer>: of n elements in the queue (default 21)-s --see : see results of the burning strategy (no jobs are sent to condor/oar). Current wedge is used as last wedge (either from the -p <xds path> or -c parameter). This bit of code is called by default when current wedge == last wedge.-u --unset <list of ints>: When showing the results (i.e. processing the last wedge from the queue: current == last), the user may ignore some "dodgy" wedges: e.g. "1,5,7"-r --raddose <string>: raddose keywords file (file with entries of the form <keyword> = <value>, where keyword is defined in raddose manual, e.g.: FLUX = 10e12). By default the software looks for the file raddose.ini in the path. If the file exists, the keywords present in the file will replace the raddose script generated by EDNA. The new raddose file will be created as <wedge_name>_raddose.sh.-d --draw : only draws the plot to an image file, doesn't open an X window (default is open the X window)-n --config <config ini file> : default value config.ini-t --resolution : resolution for calculate intensity decay. Default is the value used in strategyOutput files:<wedge_name>.png - plot<wedge_name>.csv - csv file with all the important details<wedge_name>_real.png - plot for real dose rate if raddose.ini exists/tmp/``
+``InducedRadDam``
+``.log - log fileNote: the calculations and graphs are only executed when: current <integer> == last <integer>``
